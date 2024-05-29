@@ -1,0 +1,239 @@
+Home_ApprovalSystem As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    Header1 As Header:
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =60
+        OnSelectLogo: =false
+        Title: |-
+            ="GPAS Application
+            "
+        UserEmail: =User().Email
+        UserImage: =User().Image
+        UserName: =User().FullName
+        Width: =Parent.Width
+        X: =0
+        Y: =0
+        ZIndex: =2
+
+    TextCanvas2 As Text:
+        Align: ='TextCanvas.Align'.Center
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =RGBA(170, 170, 170, 1)
+        Height: =118
+        Size: =24
+        Text: ="Welcome to ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
+        Weight: ='TextCanvas.Weight'.Semibold
+        Width: =978
+        X: =234
+        Y: =138
+        ZIndex: =3
+
+    Container As groupContainer.verticalAutoLayoutContainer:
+        Height: =301
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        X: =436
+        Y: =284
+        ZIndex: =4
+
+        GPAS As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =100
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =1
+
+            Image3 As image:
+                BorderColor: =App.Theme.Colors.Darker40
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                OnSelect: |
+                    =Navigate('GPAS Request View', ScreenTransition.CoverRight);
+                PaddingBottom: =31
+                Width: =65
+                ZIndex: =1
+
+            Content As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Height: =65
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =25
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =2
+
+                TextCanvas5 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    Size: =16
+                    Text: ="GPAS"
+                    Weight: ='TextCanvas.Weight'.Bold
+                    Width: =96
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                TextCanvas6 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    Text: ="Lorem ipsum dolor sit amet, consectetur adipiscing."
+                    Weight: ='TextCanvas.Weight'.Bold
+                    Width: =400
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+        GPAS_1 As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =100
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =2
+
+            Image3_1 As image:
+                BorderColor: =App.Theme.Colors.Darker40
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                OnSelect: |
+                    =Navigate('GPAS Request View', ScreenTransition.CoverRight);
+                PaddingBottom: =31
+                Width: =65
+                ZIndex: =1
+
+            Content_1 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Height: =65
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =25
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =2
+
+                TextCanvas5_1 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    Size: =16
+                    Text: ="GPAS"
+                    Weight: ='TextCanvas.Weight'.Bold
+                    Width: =96
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                TextCanvas6_1 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    Text: ="Lorem ipsum dolor sit amet, consectetur adipiscing."
+                    Weight: ='TextCanvas.Weight'.Bold
+                    Width: =400
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+        GPAS_2 As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =100
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =3
+
+            Image3_2 As image:
+                BorderColor: =App.Theme.Colors.Darker40
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                OnSelect: |
+                    =Navigate('GPAS Request View', ScreenTransition.CoverRight);
+                PaddingBottom: =31
+                Width: =65
+                ZIndex: =1
+
+            Content_2 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Height: =65
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =25
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =2
+
+                TextCanvas5_2 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    Size: =16
+                    Text: ="GPAS"
+                    Weight: ='TextCanvas.Weight'.Bold
+                    Width: =96
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                TextCanvas6_2 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    Text: ="Lorem ipsum dolor sit amet, consectetur adipiscing."
+                    Weight: ='TextCanvas.Weight'.Bold
+                    Width: =400
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+

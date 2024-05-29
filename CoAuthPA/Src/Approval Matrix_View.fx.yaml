@@ -1,0 +1,374 @@
+"'Approval Matrix_View' As screen":
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    "Header_7 As '13c5175f2551439889fd1161e1fcd63c'":
+        DestinationScreen: ='Approval Matrix_List'
+        HeaderText: ="Approval Matrix"
+
+    Form2 As form.PowerApps_CoreControls_Form:
+        BorderColor: =App.Theme.Colors.Darker40
+        DataSource: ='Approval Matrix'
+        Height: =595
+        Item: ='Aproval Matrix List_Table2'.Selected
+        NumberOfColumns: =2
+        UseFluentV9Cards: =true
+        Width: =1316
+        X: =32
+        Y: =148
+        ZIndex: =2
+
+        Created_DataCard1 As typedDataCard.fluentV9TextualViewCard:
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Created"
+            Default: =ThisItem.Created
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Approval Matrix'],DataSourceInfo.DisplayName,Created)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Width: =658
+            X: =1
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey32 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            "DataCardValue32 As 'Text input'":
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.View
+                FontColor: =
+                Height: =32
+                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: =Parent.Default
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey32.Y + DataCardKey32.Height + 4
+                ZIndex: =2
+
+        "'Created By_DataCard1' As typedDataCard.fluentV9ComboBoxViewCard":
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Author"
+            Default: =ThisItem.'Created By'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Approval Matrix'],DataSourceInfo.DisplayName,'Created By')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Width: =658
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey33 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue33 As Combobox.pcfdataset:
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayMode: =DisplayMode.View
+                Height: =32
+                Items: =Choices([@'Approval Matrix'].'Created By')
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey33.Y + DataCardKey33.Height + 4
+                ZIndex: =2
+
+        Modified_DataCard2 As typedDataCard.fluentV9TextualViewCard:
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Modified"
+            Default: =ThisItem.Modified
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Approval Matrix'],DataSourceInfo.DisplayName,Modified)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Width: =658
+            X: =1
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey34 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            "DataCardValue34 As 'Text input'":
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.View
+                FontColor: =
+                Height: =32
+                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: =Parent.Default
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey34.Y + DataCardKey34.Height + 4
+                ZIndex: =2
+
+        "'Modified By_DataCard2' As typedDataCard.fluentV9ComboBoxViewCard":
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Editor"
+            Default: =ThisItem.'Modified By'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Approval Matrix'],DataSourceInfo.DisplayName,'Modified By')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Width: =658
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey35 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue35 As Combobox.pcfdataset:
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayMode: =DisplayMode.View
+                Height: =32
+                Items: =Choices([@'Approval Matrix'].'Modified By')
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey35.Y + DataCardKey35.Height + 4
+                ZIndex: =2
+
+        Title_DataCard2 As typedDataCard.fluentV9TextualEditCard:
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Approval Matrix'],DataSourceInfo.DisplayName,Title)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            MaxLength: =DataSourceInfo([@'Approval Matrix'], DataSourceInfo.MaxLength, Title)
+            Required: =false
+            Update: =DataCardValue26.Value
+            Width: =658
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+            DataCardKey26 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            "DataCardValue26 As 'Text input'":
+                AccessibleLabel: =Parent.DisplayName
+                BasePaletteColor: =
+                DisplayMode: =Parent.DisplayMode
+                FontColor: =
+                Height: =32
+                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                Required: =Parent.Required
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: =Parent.Default
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey26.Y + DataCardKey26.Height + 4
+                ZIndex: =2
+
+            ErrorMessage25 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue26.Y + DataCardValue26.Height
+                ZIndex: =3
+
+            StarVisible25 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey26.Y
+                ZIndex: =4
+
+        Approver_DataCard2 As typedDataCard.fluentV9ComboBoxMultiSelectEditCard:
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Approver"
+            Default: =ThisItem.Approver
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Approval Matrix'],DataSourceInfo.DisplayName,Approver)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Update: =DataCardValue29.SelectedItems
+            Width: =658
+            X: =1
+            Y: =0
+            ZIndex: =3
+
+            DataCardKey29 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue29 As Combobox.pcfdataset:
+                AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayMode: =Parent.DisplayMode
+                Height: =32
+                Items: =Choices([@'Approval Matrix'].Approver)
+                SelectMultiple: =true
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey29.Y + DataCardKey29.Height + 4
+                ZIndex: =2
+
+            ErrorMessage26 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue29.Y + DataCardValue29.Height
+                ZIndex: =3
+
+            StarVisible26 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =20
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey29.Y
+                ZIndex: =4
+
+        Category_DataCard5 As typedDataCard.fluentV9ComboBoxMultiSelectEditCard:
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Category"
+            Default: =ThisItem.Category
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Approval Matrix'],DataSourceInfo.DisplayName,Category)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Update: =DataCardValue30.SelectedItems
+            Width: =658
+            X: =0
+            Y: =1
+            ZIndex: =3
+
+            DataCardKey30 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue30 As Combobox.pcfdataset:
+                AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayMode: =Parent.DisplayMode
+                Height: =32
+                Items: =Choices([@'Approval Matrix'].Category)
+                SelectMultiple: =true
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey30.Y + DataCardKey30.Height + 4
+                ZIndex: =2
+
+            ErrorMessage27 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue30.Y + DataCardValue30.Height
+                ZIndex: =3
+
+            StarVisible27 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =20
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey30.Y
+                ZIndex: =4
+

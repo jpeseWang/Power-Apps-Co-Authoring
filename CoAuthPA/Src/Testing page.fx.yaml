@@ -1,0 +1,8 @@
+"'Testing page' As screen":
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    "Header_1 As '13c5175f2551439889fd1161e1fcd63c'":
+        DestinationScreen: ='Request List'
+        HeaderText: ="Testing page"
+

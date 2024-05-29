@@ -1,0 +1,8 @@
+"'Approval Matrix_Edit' As screen":
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    "Header_8 As '13c5175f2551439889fd1161e1fcd63c'":
+        DestinationScreen: ='Approval Matrix_List'
+        HeaderText: ="Approval Matrix"
+

@@ -1,0 +1,236 @@
+"'Approval Matrix_List' As screen":
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    "Header_5 As '13c5175f2551439889fd1161e1fcd63c'":
+        DestinationScreen: =Home
+        HeaderText: ="Approval Matrix"
+
+    ButtonCanvas1_2 As Button:
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =32
+        OnSelect: =Navigate('Create Request', ScreenTransition.CoverRight);
+        Text: ="New"
+        Width: =96
+        X: =50
+        Y: =85
+        ZIndex: =2
+
+    "SearchInput_1 As 'Text input'":
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =33
+        Placeholder: ="Search"
+        Width: |
+            =180
+        X: =1109
+        Y: =86
+        ZIndex: =4
+
+    RefreshIcon_1 As icon.Reload:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 112, 119, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =24
+        Icon: =Icon.Reload
+        OnSelect: =Refresh('GPAS List')
+        Width: =24
+        X: =1315
+        Y: =95
+        ZIndex: =5
+
+    "'Aproval Matrix List_Table' As Table.pcfdataset":
+        DisplayMode: =DisplayMode.Edit
+        Height: =632
+        Items: ='Approval Matrix'
+        onCellValueChange: =false
+        onFilter: =false
+        onNavigate: =false
+        onRowSelect: =false
+        onSave: =false
+        OnSelect: =false
+        Visible: =false
+        Width: =1366
+        X: =0
+        Y: =136
+        ZIndex: =7
+
+        Title5 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Title"
+            FieldName: ="Title"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =1
+            ZIndex: =1
+
+        Approver1 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Approver"
+            FieldName: ="Approver"
+            FieldType: ="E"
+            FieldVariantName: ="textualColumn"
+            Order: =2
+            ZIndex: =2
+
+        Category3 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Category"
+            FieldName: ="Category"
+            FieldType: ="E"
+            FieldVariantName: ="textualColumn"
+            Order: =3
+            ZIndex: =3
+
+        "'Modified By1' As pcfDataField.textualColumn":
+            FieldDisplayName: ="Modified By"
+            FieldName: ="Editor"
+            FieldType: ="E"
+            FieldVariantName: ="textualColumn"
+            Order: =5
+            ZIndex: =5
+
+        Modified1 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Modified"
+            FieldName: ="Modified"
+            FieldType: ="d"
+            FieldVariantName: ="textualColumn"
+            Order: =6
+            ZIndex: =6
+
+    "'Aproval Matrix List_Table2' As dataTable.datatable":
+        BorderColor: =App.Theme.Colors.Darker40
+        BorderStyle: =BorderStyle.Solid
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Normal
+        HeadingColor: =RGBA(255, 255, 255, 1)
+        HeadingFill: =App.Theme.Colors.Primary
+        HeadingFont: =App.Theme.Font
+        HeadingFontWeight: =FontWeight.Normal
+        HeadingSize: =13
+        Height: =621
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =App.Theme.Colors.Lighter80
+        InputFill: =RGBA(255, 255, 255, 1)
+        InvertedColor: =RGBA(255, 255, 255, 1)
+        Items: ='Approval Matrix'
+        LinkColor: =App.Theme.Colors.Lighter10
+        PrimaryColor1: =App.Theme.Colors.Primary
+        PrimaryColor2: =App.Theme.Colors.Darker30
+        PrimaryColor3: =App.Theme.Colors.Lighter70
+        SelectedColor: =RGBA(0, 0, 0, 1)
+        SelectedFill: =App.Theme.Colors.Lighter70
+        Size: =13
+        Width: =1366
+        X: =0
+        Y: =146
+        ZIndex: =8
+
+        Title_Column1_1 As dataTableColumn.textualColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Title"
+            FieldName: ="Title"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.Title
+            Width: =231
+            X: =89
+            Y: =0
+            ZIndex: =1
+
+        Approver_Column1_1 As dataTableColumn.textualColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Approver"
+            FieldName: ="Approver"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: |
+                =Concat(ThisItem.Approver, ThisRecord.DisplayName, ", ")
+            Width: =295
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        Category_Column1_1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Category"
+            FieldName: ="Category"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: |
+                =Concat(ThisItem.Category.Value, ThisRecord.Value, ", ")
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        ID_Column1 As dataTableColumn.numberColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="ID"
+            FieldName: ="ID"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.ID
+            Width: =107
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        Modified_Column1 As dataTableColumn.dateTimeColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Modified"
+            FieldName: ="Modified"
+            FieldVariantName: ="dateTimeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =6
+            Text: =Text(ThisItem.Modified,DateTimeFormat.ShortDateTime)
+            Width: =202
+            X: =1151
+            Y: =0
+            ZIndex: =8
+
+        "'Modified By_Column1' As dataTableColumn.textualColumn":
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Modified By"
+            FieldName: ="Editor"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.'Modified By'.DisplayName
+            Width: =134
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+    Icon3 As icon.Search:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =App.Theme.Colors.Darker30
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =20
+        Icon: =Icon.Search
+        Width: =20
+        X: =1256
+        Y: =93
+        ZIndex: =9
+

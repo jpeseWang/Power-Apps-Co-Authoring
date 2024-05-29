@@ -1,0 +1,51 @@
+{
+  "f0111090-e0ee-4fc0-825d-4b72e8e09705": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1685/1.0.1685.3700/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://curecorona.sharepoint.com/sites/Sysmex-Dev": {
+        "dataSources": {
+          "Approval Matrix": {
+            "tableName": "98b978ae-d81c-4021-a8e6-90fd3491c0b2"
+          },
+          "Category Configuration": {
+            "tableName": "9b0bfe01-b85f-4c13-9f80-63ba09c4891f"
+          },
+          "Category Groups": {
+            "tableName": "c301b659-4bc4-4bf1-8278-f0610edb92d1"
+          },
+          "GPAS List": {
+            "tableName": "e0b094d7-8288-4c2f-afc5-cece0cca0c5a"
+          },
+          "GPAS Request Activity Log": {
+            "tableName": "6e89d075-55f5-4cd8-8a7f-054902f4b07e"
+          },
+          "Sub Category Groups": {
+            "tableName": "496d5ba4-644b-4904-b301-6f8bd7838300"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Approval Matrix",
+      "Category Configuration",
+      "Category Groups",
+      "GPAS List",
+      "Sub Category Groups",
+      "GPAS Request Activity Log"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "f0111090-e0ee-4fc0-825d-4b72e8e09705"
+  }
+}

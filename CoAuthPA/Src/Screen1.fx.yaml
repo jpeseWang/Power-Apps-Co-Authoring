@@ -1,0 +1,94 @@
+Screen1 As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    DataTable1 As dataTable.datatable:
+        BorderColor: =App.Theme.Colors.Darker40
+        BorderStyle: =BorderStyle.Solid
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Normal
+        HeadingColor: =RGBA(255, 255, 255, 1)
+        HeadingFill: =App.Theme.Colors.Primary
+        HeadingFont: =App.Theme.Font
+        HeadingFontWeight: =FontWeight.Normal
+        HeadingSize: =13
+        Height: =720
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =App.Theme.Colors.Lighter80
+        InputFill: =RGBA(255, 255, 255, 1)
+        InvertedColor: =RGBA(255, 255, 255, 1)
+        Items: ='Approval Matrix'
+        LinkColor: =App.Theme.Colors.Lighter10
+        PrimaryColor1: =App.Theme.Colors.Primary
+        PrimaryColor2: =App.Theme.Colors.Darker30
+        PrimaryColor3: =App.Theme.Colors.Lighter70
+        SelectedColor: =RGBA(0, 0, 0, 1)
+        SelectedFill: =App.Theme.Colors.Lighter70
+        Size: =13
+        Width: =1366
+        X: =0
+        Y: =48
+        ZIndex: =1
+
+        Title_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Title"
+            FieldName: ="Title"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.Title
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        Approver_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Approver"
+            FieldName: ="Approver"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: |
+                =Concat(ThisItem.Approver, ThisRecord.DisplayName, ", ")
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        Category_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Category"
+            FieldName: ="Category"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: |
+                =ThisItem.Category.Value
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        Attachments_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Attachments"
+            FieldName: ="{Attachments}"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.Attachments
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+

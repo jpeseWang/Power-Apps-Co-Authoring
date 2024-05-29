@@ -1,0 +1,155 @@
+"'Request List' As screen":
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    ButtonCanvas1 As Button:
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =32
+        OnSelect: =Navigate('Create Request', ScreenTransition.CoverRight);
+        Text: ="New"
+        Width: =96
+        X: =50
+        Y: =72
+        ZIndex: =1
+
+    cbxStatus As Dropdown.pcfdataset:
+        AccessibleLabel: ="All"
+        DefaultSelectedItems: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Items: |
+            =Choices('GPAS List'.Status)
+        Width: =178
+        X: =1128
+        Y: =72
+        ZIndex: =2
+
+    "SearchInput As 'Text input'":
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =33
+        Placeholder: ="Search"
+        Width: =171
+        X: =941
+        Y: =71
+        ZIndex: =3
+
+    RefreshIcon As icon.Reload:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 112, 119, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =24
+        Icon: =Icon.Reload
+        OnSelect: =Refresh('GPAS List')
+        Width: =24
+        X: =1315
+        Y: =75
+        ZIndex: =4
+
+    ButtonCanvas1_1 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Secondary
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =32
+        OnSelect: =Navigate('GPAS Request View', ScreenTransition.CoverRight);
+        Text: ="View"
+        Width: =96
+        X: =165
+        Y: =72
+        ZIndex: =5
+
+    RequestListTable As Table.pcfdataset:
+        DisableChildItemsEditing: ="no"
+        DisplayMode: =DisplayMode.Edit
+        EnableColumnMoving: ="no"
+        Height: =647
+        Items: |-
+            =Filter(
+                'GPAS List',
+                (cbxStatus.Selected.Value = "All" || IsBlank(cbxStatus.Selected.Value)) || Status.Value = cbxStatus.Selected.Value
+            )
+        onCellValueChange: =false
+        onFilter: =false
+        onNavigate: =false
+        onRowSelect: =false
+        onSave: =false
+        OnSelect: =false
+        Width: =1366
+        X: =0
+        Y: =108
+        ZIndex: =7
+
+        Subject1 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Subject"
+            FieldName: ="Subject"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =5
+            ZIndex: =7
+
+        Status1 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Status"
+            FieldName: ="Status"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =13
+            ZIndex: =8
+
+        "'Time Lapsed1' As pcfDataField.textualColumn":
+            FieldDisplayName: ="Time Lapsed"
+            FieldName: ="Time_x0020_Lapsed"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =12
+            ZIndex: =13
+
+        Category1 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Category"
+            FieldName: ="Category_x0020_Groups"
+            FieldType: ="E"
+            FieldVariantName: ="textualColumn"
+            Order: =9
+            ZIndex: =15
+
+        "'Created By1' As pcfDataField.textualColumn":
+            FieldDisplayName: ="Created By"
+            FieldName: ="Author"
+            FieldType: ="E"
+            FieldVariantName: ="textualColumn"
+            Order: =10
+            ZIndex: =16
+
+        Created1 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Created"
+            FieldName: ="Created"
+            FieldType: ="d"
+            FieldVariantName: ="textualColumn"
+            Order: =11
+            ZIndex: =17
+
+        "'Sub Category1' As pcfDataField.textualColumn":
+            FieldDisplayName: ="Sub Category"
+            FieldName: ="Sub_x0020_Category"
+            FieldType: ="E"
+            FieldVariantName: ="textualColumn"
+            Order: =10
+            ZIndex: =18
+
+        "'Reference No.1' As pcfDataField.textualColumn":
+            FieldDisplayName: ="Reference No."
+            FieldName: ="ReferenceNo_x002e_"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =4
+            ZIndex: =19
+
+    "Header_2 As '13c5175f2551439889fd1161e1fcd63c'":
+        DestinationScreen: =Home
+        HeaderText: ="Regoinal Approval System"
+        ZIndex: =8
+

@@ -1,0 +1,4 @@
+"'Category Configuration_AddSubCategory' As screen":
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+

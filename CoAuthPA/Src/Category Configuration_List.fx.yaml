@@ -1,0 +1,217 @@
+"'Category Configuration_List' As screen":
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    "Header_6 As '13c5175f2551439889fd1161e1fcd63c'":
+        DestinationScreen: =Home
+        HeaderText: ="Category Configuration"
+
+    ButtonCanvas1_4 As Button:
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =33
+        OnSelect: =Navigate('Category Configuration_AddCategory', ScreenTransition.CoverRight);
+        Text: ="Add Category"
+        Width: =120
+        X: =37
+        Y: =85
+        ZIndex: =2
+
+    RefreshIcon_2 As icon.Reload:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 112, 119, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =24
+        Icon: =Icon.Reload
+        OnSelect: =Refresh('GPAS List')
+        Width: =24
+        X: =1315
+        Y: =88
+        ZIndex: =5
+
+    Table3 As Table.pcfdataset:
+        DisplayMode: =DisplayMode.Edit
+        Height: =629
+        Items: ='Category Configuration'
+        onCellValueChange: =false
+        onFilter: =false
+        onNavigate: =false
+        onRowSelect: =false
+        onSave: =false
+        OnSelect: =false
+        Visible: =false
+        Width: =1366
+        X: =0
+        Y: =138
+        ZIndex: =7
+
+        Title2 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Title"
+            FieldName: ="Title"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =1
+            ZIndex: =1
+
+        Category2 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Category"
+            FieldName: ="Category"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =2
+            ZIndex: =2
+
+        "'Sub Category2' As pcfDataField.textualColumn":
+            FieldDisplayName: ="Sub Category"
+            FieldName: ="SubCategory"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =3
+            ZIndex: =3
+
+        "'Category Groups1' As pcfDataField.textualColumn":
+            FieldDisplayName: ="Category Groups"
+            FieldName: ="CategoryGroups"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =4
+            ZIndex: =4
+
+        "'Sub Category Groups1' As pcfDataField.textualColumn":
+            FieldDisplayName: ="Sub Category Groups"
+            FieldName: ="SubCategoryGroups"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =5
+            ZIndex: =5
+
+    "'Category Configuration_List Table' As dataTable.datatable":
+        BorderColor: =App.Theme.Colors.Darker40
+        BorderStyle: =BorderStyle.Solid
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Normal
+        HeadingColor: =RGBA(255, 255, 255, 1)
+        HeadingFill: =App.Theme.Colors.Primary
+        HeadingFont: =App.Theme.Font
+        HeadingFontWeight: =FontWeight.Normal
+        HeadingSize: =13
+        Height: =630
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =App.Theme.Colors.Lighter80
+        InputFill: =RGBA(255, 255, 255, 1)
+        InvertedColor: =RGBA(255, 255, 255, 1)
+        Items: ='Category Configuration'
+        LinkColor: =App.Theme.Colors.Lighter10
+        PrimaryColor1: =App.Theme.Colors.Primary
+        PrimaryColor2: =App.Theme.Colors.Darker30
+        PrimaryColor3: =App.Theme.Colors.Lighter70
+        SelectedColor: =RGBA(0, 0, 0, 1)
+        SelectedFill: =App.Theme.Colors.Lighter70
+        Size: =13
+        Width: =1366
+        X: =0
+        Y: =138
+        ZIndex: =8
+
+        Category_Column2 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Category"
+            FieldName: ="Title"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            OnSelect: =Navigate('Category Configuration_View', ScreenTransition.CoverRight)
+            Order: =1
+            Text: =ThisItem.Category
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        "'Sub Category_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Sub Category"
+            FieldName: ="SubCategory"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            OnSelect: =Navigate('Category Configuration_View', ScreenTransition.CoverRight)
+            Order: =2
+            Text: =ThisItem.'Sub Category'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        "'Category Groups_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Category Groups"
+            FieldName: ="Category_x0020_Groups"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            OnSelect: =Navigate('Category Configuration_View', ScreenTransition.CoverRight)
+            Order: =3
+            Text: =Concat(ThisItem.'Category Groups'.Value, ThisRecord.Value, ", ")
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =8
+
+        "'Sub Category Groups_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Sub Category Groups"
+            FieldName: ="Sub_x0020_Category_x0020_Groups"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            OnSelect: =Navigate('Category Configuration_View', ScreenTransition.CoverRight)
+            Order: =4
+            Text: =Concat(ThisItem.'Sub Category Groups'.Value, ThisRecord.Value, ", ")
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+    ButtonCanvas1_6 As Button:
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =33
+        OnSelect: =Navigate('Create Request', ScreenTransition.CoverRight);
+        Text: ="Add Sub Category"
+        Width: =148
+        X: =168
+        Y: =85
+        ZIndex: =9
+
+    "SearchInput_2 As 'Text input'":
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =33
+        Placeholder: ="Search"
+        Width: |
+            =180
+        X: =1109
+        Y: =86
+        ZIndex: =10
+
+    Icon3_1 As icon.Search:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =App.Theme.Colors.Darker30
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =20
+        Icon: =Icon.Search
+        Width: =20
+        X: =1256
+        Y: =93
+        ZIndex: =11
+
